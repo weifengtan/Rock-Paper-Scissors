@@ -12,7 +12,7 @@ function getComputerChoice() {
 }
 
 function winChecker(playerChoice, computerChoice){
-    if (playerChoice == 1 && computerChoice != 3){
+    if (playerChoice == 1 && computerChoice != 3 && computerChoice != 1){
         return 1;
     }
     else if (playerChoice == 1 && computerChoice == 3){
@@ -36,7 +36,8 @@ function playRound(playerSelection, computerSelection){
     computerSelection = computerSelection.replace(computerSelection.charAt(0), computerSelection.charAt(0).toUpperCase());
 
     let playerNumber;
-    let computerNumber; 
+    let computerNumber;
+    let winner; 
 
     if(playerSelection == "Rock"){
         playerNumber = 1; 
@@ -60,10 +61,12 @@ function playRound(playerSelection, computerSelection){
     console.log(playerNumber);
     console.log(computerNumber);
 
-    if (playerNumber < computerNumber){
+    winner = winChecker(playerNumber, computerNumber);
+
+    if (winner == 1){
         return (`You win! ${playerSelection} beats ${computerSelection}!`);
     }
-    else if (playerNumber == computerNumber){
+    else if (winner == 3){
         return (`It's a tie! ${computerSelection} ties with ${playerSelection}!`);
     }
     else {
@@ -95,12 +98,16 @@ function game(){
         }
     }
 
-    alert (`You won ${playerWins} rounds, Computer won ${computerWins}rounds`);
+    alert (`You won ${playerWins} rounds, Computer won ${computerWins} rounds`);
     console.log(`You won ${playerWins} rounds, Computer won ${computerWins} rounds`);
 
     if (playerWins > computerWins){
         alert(`You win this game!`);
         return console.log(`You win this game!`);
+    }
+    else if (playerWins == computerWins){
+        alert(`You tied! No one won!`);
+        return console.log(`You tied! No one won!`);
     }
     else {
         alert(`The computer wins this game!`);
