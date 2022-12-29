@@ -1,3 +1,4 @@
+/* This function gets a randomized choice for the computer */
 function getComputerChoice() {
     randomInt = Math.floor(Math.random() * 3) + 1;
     if(randomInt == 1){
@@ -11,6 +12,7 @@ function getComputerChoice() {
     }
 }
 
+/* This function checks for who won the round */
 function winChecker(playerChoice, computerChoice){
     if (playerChoice == 1 && computerChoice != 3 && computerChoice != 1){
         return 1;
@@ -29,6 +31,7 @@ function winChecker(playerChoice, computerChoice){
     }
 }
 
+/* this function plays one round between the computer and human and checks who won!*/
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -74,6 +77,7 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+/* This function plays 5 rounds of the game and tells you who won the most in the end!*/
 function game(){
     let result; 
     let playerWins = 0; 
