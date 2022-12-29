@@ -11,6 +11,24 @@ function getComputerChoice() {
     }
 }
 
+function winChecker(playerChoice, computerChoice){
+    if (playerChoice == 1 && computerChoice != 3){
+        return 1;
+    }
+    else if (playerChoice == 1 && computerChoice == 3){
+        return 2; 
+    }
+    else if (playerChoice < computerChoice){
+        return 1; 
+    }
+    else if (playerChoice == computerChoice){
+        return 3;
+    }
+    else {
+        return 2; 
+    }
+}
+
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
