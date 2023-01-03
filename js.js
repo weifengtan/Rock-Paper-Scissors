@@ -29,7 +29,8 @@ function winChecker(playerChoice, computerChoice){
     }
 }
 
-function playRound(playerSelection, computerSelection){
+function playRound(playerSelection){
+    let computerSelection = getComputerChoice(); 
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
     playerSelection = playerSelection.replace(playerSelection.charAt(0), playerSelection.charAt(0).toUpperCase()); 
@@ -58,8 +59,8 @@ function playRound(playerSelection, computerSelection){
     else{
         computerNumber = 3; 
     }
-    console.log(playerNumber);
-    console.log(computerNumber);
+    console.log(`this is the player number ${playerNumber}`);
+    console.log(`this is the computer number ${computerNumber}`);
 
     winner = winChecker(playerNumber, computerNumber);
 
@@ -76,6 +77,5 @@ function playRound(playerSelection, computerSelection){
 
 const rpsButtons = document.querySelectorAll('div.rps-button-container button');
 rpsButtons.forEach((button) => {
-    let computerChoice = getComputerChoice(); 
-    button.addEventListener('click', () => playRound(button.className, computerChoice));
+    button.addEventListener('click', () => playRound(button.className));
 });
