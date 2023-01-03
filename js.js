@@ -65,13 +65,16 @@ function playRound(playerSelection){
     winner = winChecker(playerNumber, computerNumber);
 
     if (winner == 1){
-        return (`You win! ${playerSelection} beats ${computerSelection}!`);
+        console.log (`You win! ${playerSelection} beats ${computerSelection}!`)
+        return; 
     }
     else if (winner == 3){
-        return (`It's a tie! ${computerSelection} ties with ${playerSelection}!`);
+        console.log (`It's a tie! ${computerSelection} ties with ${playerSelection}!`);
+        return; 
     }
     else {
-        return (`You lose! ${computerSelection} beats ${playerSelection}!`);
+        console.log (`You lose! ${computerSelection} beats ${playerSelection}!`);
+        return;
     }
 }
 
