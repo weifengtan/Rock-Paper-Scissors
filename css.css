@@ -1,63 +1,77 @@
-body {
-    height: 100vh;
+:root {
+    --stormWhite: rgb(201,208,208); 
+    --stormLightGreen: rgb(122,177,167);
+    --stormDarkGreen: rgb(67,103,104);
+    --stormLightBlack: rgb(7,34,42);
+    --stormDarkBlack: rgb(8,21,30);
+}
+
+body{
+    background-color: var(--stormDarkBlack);
+    height: 100vh; 
     width: 100vw;
-    margin: 0px;
-    background-color: #073442;
-    overflow: hidden;    
+    overflow: hidden;
+    display: flex; 
+    flex-direction: column;
 }
 
 .title {
-    font-size: 58px;
-    color: rgb(122, 177, 167); 
+    color: var(--stormLightGreen); 
+    font-size: 90px;
+    align-self: center;
+}
+
+.content {
+    display: flex; 
+    justify-content: space-between;
+    color: var(--stormDarkGreen);
+    margin-top: 275px;
+}
+
+.right-side {
+    font-size: 30px;
+    margin-left: 30px;
+}
+
+.right-side-number {
     text-align: center;
+    color: var(--stormWhite); 
 }
 
-.big-container {
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    width: 100vw; 
-    height: 100vh; 
+.middle {
+    font-size: 60px;
 }
 
-.container {
+.left-side {
+    margin-right: 30px;
+    font-size: 30px
+}
+
+.left-side-number {
+    text-align: center;
+    color: var(--stormWhite);
+}
+
+.buttons {
+    align-self: center;
+    margin-top: 150px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-    height: 100vh;
-    border: 4px solid green; 
+    gap: 45px;
 }
 
-.display-container {
-    border: 4px solid blue;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.rock-button,
+.paper-button,
+.scissor-button {
+    font-size: 45px;
+    background-color: var(--stormLightBlack);
+    color: var(--stormLightGreen);
+    padding: 18px;
 }
 
-.results {
-    margin-bottom: 50px;
-    color: rgb(201, 208, 208);
-    font-size: 78px;
-}
-
-.player-score {
-    color: gray;
-    margin-right: auto;
-    margin-left: 50px;
-    border: 4px solid red; 
-}
-.computer-score {
-    color: gray;
-    margin-left: auto;
-    margin-right: 50px;
-}
-
-.rps-button-container {
-    border: 4px solid red; 
-    display: flex; 
-    gap: 20px;
+.rock-button:hover,
+.paper-button:hover,
+.scissor-button:hover {
+    color: var(--stormWhite);
+    background-color: var(--stormDarkBlack);
+    transition: 0.4s;
 }

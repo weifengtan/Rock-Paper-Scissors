@@ -43,7 +43,7 @@ function playRound(playerSelection){
     if(playerSelection == "Rock"){
         playerNumber = 1; 
     }
-    else if (playerSelection == "Scissors"){
+    else if (playerSelection == "Scissor"){
         playerNumber = 2; 
     }
     else{
@@ -53,7 +53,7 @@ function playRound(playerSelection){
     if(computerSelection == "Rock"){
         computerNumber = 1; 
     }
-    else if(computerSelection == "Scissors"){
+    else if(computerSelection == "Scissor"){
         computerNumber = 2; 
     }
     else{
@@ -66,19 +66,31 @@ function playRound(playerSelection){
 
     if (winner == 1){
         console.log (`You win! ${playerSelection} beats ${computerSelection}!`)
-        return; 
+        return (`win`);  
     }
     else if (winner == 3){
         console.log (`It's a tie! ${computerSelection} ties with ${playerSelection}!`);
-        return; 
+        return (`tie`); 
     }
     else {
         console.log (`You lose! ${computerSelection} beats ${playerSelection}!`);
-        return;
+        return (`lose`); 
     }
 }
 
-const rpsButtons = document.querySelectorAll('div.rps-button-container button');
+const rpsButtons = document.querySelectorAll('div.buttons button');
 rpsButtons.forEach((button) => {
     button.addEventListener('click', () => playRound(button.className));
 });
+
+let player_winnings = 0; 
+let computer_winnings = 0; 
+let winner_display; 
+
+const right_side_number = document.querySelector('right-side-number'); 
+const left_side_number = document.querySelector('left-side-number'); 
+const middle_content = document.querySelector('middle-content'); 
+
+for (let i = 0; i < 5; i++){
+    if 
+}
