@@ -21,21 +21,34 @@ function getComputerChoice() {
 }
 
 function winChecker(playerChoice, computerChoice){
-    if (playerChoice == 1 && computerChoice != 3 && computerChoice != 1){
-        return 1;
-    }
-    else if (playerChoice == 1 && computerChoice == 3){
-        return 2; 
-    }
-    else if (playerChoice < computerChoice){
+    if (playerChoice == 'rock' && computerChoice == 'scissor'){
         return 1; 
     }
-    else if (playerChoice == computerChoice){
-        return 3;
-    }
-    else {
+    else if (playerChoice == 'rock' && computerChoice == 'paper'){
         return 2; 
     }
+    else if (playerChoice == 'rock' && computerChoice == 'rock'){
+        return 3; 
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'rock'){
+        return 1; 
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'scissor'){
+        return 2;
+    }
+    else if (playerChoice == 'paper' && computerChoice == 'paper'){
+        return 3; 
+    }
+    else if (playerChoice == 'scissor' && computerChoice == 'rock'){
+        return 2;
+    }
+    else if (playerChoice == 'scissor' && computerChoice == 'paper'){
+        return 1; 
+    }
+    else if (playerChoice == 'scissor' && computerChoice == 'scissor'){
+        return 3; 
+    }
+
 }
 
 function playRound(playerSelection){
@@ -50,32 +63,32 @@ function playRound(playerSelection){
     let winner; 
 
     if(playerSelection == "Rock-button"){
-        playerNumber = 1; 
+        playerNumber = 'rock'; 
     }
     else if (playerSelection == "Scissor-button"){
-        playerNumber = 2; 
+        playerNumber = 'scissor'; 
     }
     else{
-        playerNumber = 3; 
+        playerNumber = 'paper'; 
     }
 
     if(computerSelection == "Rock-button"){
-        computerNumber = 1; 
+        computerNumber = 'rock'; 
     }
     else if(computerSelection == "Scissor-button"){
-        computerNumber = 2; 
+        computerNumber = 'scissor'; 
     }
     else{
-        computerNumber = 3; 
+        computerNumber = 'paper'; 
     }
     console.log(`this is the player number ${playerNumber}`);
     console.log(`this is the computer number ${computerNumber}`);
 
-    winner = winChecker(playerNumber, computerNumber);
+    winner = winChecker(playerNumber, computerNumber); 
 
     if (winner == 1){
         console.log (`You win! ${playerSelection} beats ${computerSelection}!`)
-        globalVar = (`win`); 
+        globalVar = (`player`); 
     }
     else if (winner == 3){
         console.log (`It's a tie! ${computerSelection} ties with ${playerSelection}!`);
@@ -83,7 +96,7 @@ function playRound(playerSelection){
     }
     else {
         console.log (`You lose! ${computerSelection} beats ${playerSelection}!`);
-        globalVar = ('lose'); 
+        globalVar = ('computer'); 
     }   
 
     if (computer_winnings == 5){
@@ -105,14 +118,14 @@ function playRound(playerSelection){
     return; 
     }
 
-    if (globalVar == 'win') {
+    if (globalVar == 'player') {
         player_winnings++; 
         right_side_number.innerHTML = `${player_winnings}`;
         winner_display = `PLAYER POINT`; 
         middle_content.innerHTML = `${winner_display}`;
         return;
     }
-    else if (globalVar == 'lose') {
+    else if (globalVar == 'computer') {
         computer_winnings++;
         left_side_number.innerHTML = `${computer_winnings}`; 
         winner_display = `COMPUTER POINT`; 
