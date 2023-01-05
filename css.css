@@ -98,3 +98,16 @@ body{
     transition: 0.1s;
     border-radius: 50px;
 }
+
+section {
+    max-height: 100%;
+    margin: auto;
+}
+
+#ripple {
+    height: 70rem;
+    /*
+    background: url('water.jpg') left top / cover;
+    */
+    background-color: var(--stormDarkBlack);
+}

@@ -145,6 +145,12 @@ rpsButtons.forEach((button) => {
 button.addEventListener('click', () => playRound(button.className));
 });
 
+$('#ripple').ripples({
+	resolution: 512,
+	dropRadius: 20,
+	perturbance: 0.04,
+});
+
 
 
 
