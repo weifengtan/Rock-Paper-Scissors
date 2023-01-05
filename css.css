@@ -96,4 +96,5 @@ body{
     color: var(--stormWhite);
     background-color: var(--stormDarkBlack);
     transition: 0.1s;
+    border-radius: 50px;
 }

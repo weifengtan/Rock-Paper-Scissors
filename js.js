@@ -139,7 +139,6 @@ function playRound(playerSelection){
     }
 }
 
-
 // This is when the program actually starts
 const rpsButtons = document.querySelectorAll('div.buttons button');
 rpsButtons.forEach((button) => {
